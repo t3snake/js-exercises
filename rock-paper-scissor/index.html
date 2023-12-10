@@ -4,77 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissor</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <script>
-        function getComputerChoice() {
-            let num = Math.random();
-            if (num < 0.33){
-                return "Rock";
-            }
-            if (num < 0.66) {
-                return "Paper";
-            }
-            return "Scissor";
-        }
+    <h1 class="header">Rock Paper Scissors</h1>
 
-        function playRound(playerSelection, computerSelection) {
-            if (playerSelection === computerSelection){
-                return "Draw";
-            }
-
-            if (playerSelection === "Rock" && computerSelection === "Paper"){
-                return "Lose";
-            }
-
-            if (playerSelection === "Rock" && computerSelection === "Scissor"){
-                return "Win";
-            }
-
-            if (playerSelection === "Paper" && computerSelection === "Rock"){
-                return "Win";
-            }
-
-            if (playerSelection === "Paper" && computerSelection === "Scissor"){
-                return "Lose";
-            }
-
-            if (playerSelection === "Scissor" && computerSelection === "Rock"){
-                return "Lose";
-            }
-
-            if (playerSelection === "Scissor" && computerSelection === "Paper"){
-                return "Win";
-            }
-
-        }
-        function play() {
-            let playerSelection = "";
-            let computerSelection = "";
-            let pScore = 0;
-            let cScore = 0;
-
-            for(let i=0; i<=4; i++){
-                playerSelection = prompt("Your Choice");
-                computerSelection = getComputerChoice();
-                let result = playRound(playerSelection, computerSelection);
-                console.log(result);
-                if (result === "Win") {
-                    pScore += 1;
-                }
-                if (result === "Lose") {
-                    cScore += 1;
-                }
-            }
+    <div class="controls">
+        <p>Make your choice!</p>
+        <span>
+            <img id="rock" src="rock.png" alt="Rock">
+            <img id="paper" src="paper.png" alt="Paper">
+            <img id="scissor" src="scissors.png" alt="Scissors">
+        </span>  
+         
+        <div class="status">
+        </div>
+    
+        <div class="results"> 
+            <h3>Score</h3>
+            <p>
+                Player: <span id="playerscore">0</span>
+                &nbsp; Computer: <span id="compscore">0</span>
+            </p>
+            <button id="reset">Reset</button>
             
-            console.log("Wins: " + pScore + ", Losses: " + cScore + ".");
-            if (pScore > cScore) {
-                console.log("You win ez.");
-            } else {
-                console.log("Git gud scrub.");
-            }
-        }
-        
-    </script>
+        </div>
+    
+    </div>
+
+    
+    <script src="script.js"></script>
 </body>
 </html>

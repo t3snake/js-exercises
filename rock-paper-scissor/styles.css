@@ -1,0 +1,31 @@
+body {
+    background-color: #faf0e6;
+}
+
+h3, p {
+    margin: 5px;
+}
+
+.header, .controls, .results, .status {
+    align-items: center;
+    text-align: center;
+}
+
+.controls {
+    background-color: #eed9c4;
+    margin: 10px 30px 30px;
+    padding: 10px;
+}
+
+.results {
+    background-color: #d9b99b;
+    margin: 10px 30px;
+    padding: 10px;
+}
+
+img {
+    height: 300px;
+    width: 300px;
+    border: 2px solid;
+    margin: 10px;
+}
